@@ -15,11 +15,11 @@ class GameScene: SKScene {
     var gridNode: Grid!
     
     /* UI Objects */
-    var stepButton: MSButtonNode!
+    var stepButton: ButtonNode!
     var populationLabel: SKLabelNode!
     var generationLabel: SKLabelNode!
-    var playButton: MSButtonNode!
-    var pauseButton: MSButtonNode!
+    var playButton: ButtonNode!
+    var pauseButton: ButtonNode!
     
     override func didMove(to view: SKView) {
         /* Setup your scene here */
@@ -28,11 +28,11 @@ class GameScene: SKScene {
         gridNode = childNode(withName: "gridNode") as! Grid
         
         /* Connect UI scene objects */
-        stepButton = childNode(withName: "stepButton") as! MSButtonNode
+        stepButton = childNode(withName: "stepButton") as! ButtonNode
         populationLabel = childNode(withName: "populationLabel") as! SKLabelNode
         generationLabel = childNode(withName: "generationLabel") as! SKLabelNode
-        playButton = childNode(withName: "playButton") as! MSButtonNode
-        pauseButton = childNode(withName: "pauseButton") as! MSButtonNode
+        playButton = childNode(withName: "playButton") as! ButtonNode
+        pauseButton = childNode(withName: "pauseButton") as! ButtonNode
         
         /* Setup testing button selected handler */
         stepButton.selectedHandler = {

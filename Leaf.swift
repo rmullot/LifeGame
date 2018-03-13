@@ -24,7 +24,7 @@ class Leaf: SKSpriteNode {
     var neighborCount = 0
     
     init() {
-        /* Initialize with 'bubble' asset */
+        /* Initialize with 'leaf' asset */
         let texture = SKTexture(imageNamed: "leaf")
         super.init(texture: texture, color: UIColor.clear, size: texture.size())
         

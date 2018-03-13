@@ -1,38 +1,38 @@
 //
-//  MSButtonNode.swift
-//  Make School
+//  ButtonNode.swift
+//  LifeGame
 //
-//  Created by Martin Walsh on 20/02/2016.
-//  Copyright (c) 2016 Make School. All rights reserved.
+//  Created by Romain Mullot on 13/03/2018.
+//  Copyright © 2018 Apportable. All rights reserved.
 //
 
 import SpriteKit
 
-enum MSButtonNodeState {
-    case msButtonNodeStateActive, msButtonNodeStateSelected, msButtonNodeStateHidden
+enum ButtonNodeState {
+    case buttonNodeStateActive, buttonNodeStateSelected, buttonNodeStateHidden
 }
 
-class MSButtonNode: SKSpriteNode {
+class ButtonNode: SKSpriteNode {
     
     /* Setup a dummy action closure */
     var selectedHandler: () -> Void = { print("No button action set") }
     
     /* Button state management */
-    var state: MSButtonNodeState = .msButtonNodeStateActive {
+    var state: ButtonNodeState = .buttonNodeStateActive {
         didSet {
             switch state {
-            case .msButtonNodeStateActive:
+            case .buttonNodeStateActive:
                 /* Enable touch */
                 self.isUserInteractionEnabled = true
                 
                 /* Visible */
                 self.alpha = 1
                 break
-            case .msButtonNodeStateSelected:
+            case .buttonNodeStateSelected:
                 /* Semi transparent */
                 self.alpha = 0.7
                 break
-            case .msButtonNodeStateHidden:
+            case .buttonNodeStateHidden:
                 /* Disable touch */
                 self.isUserInteractionEnabled = false
                 
@@ -55,12 +55,13 @@ class MSButtonNode: SKSpriteNode {
     
     // MARK: - Touch handling
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        state = .msButtonNodeStateSelected
+        state = .buttonNodeStateSelected
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         selectedHandler()
-        state = .msButtonNodeStateActive
+        state = .buttonNodeStateActive
     }
     
 }
+
