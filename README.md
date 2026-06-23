@@ -1,4 +1,4 @@
 LifeGame
 ========
 
-Game of life based on John Horton Conway algorithm
+Game of life based on John Horton Conway algorithm (2014)
